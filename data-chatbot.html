@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>n8n Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="n8n-chat"></div>
+
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8n-szosdyck.ap-southeast-1.clawcloudrun.com/webhook/57d95df6-e0f0-45d2-8ea2-5d4bd4210fca/chat',
+            target: '#n8n-chat',
+            mode: 'window',
+            initialMessages: [
+                'Hi there! 👋',
+                'My name is Nathan. How can I assist you today?'
+            ],
+            i18n: {
+                en: {
+                    title: 'Hi there! 👋',
+                    subtitle: "Start a chat. We're here to help you 24/7.",
+                    inputPlaceholder: 'Type your question...',
+                    getStarted: 'Start Chat',
+                    footer: '',
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
